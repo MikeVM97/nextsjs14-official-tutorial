@@ -2,70 +2,69 @@
 
 1. ## Getting Started
 
-1.1. Start new Next.js project
-`npx create-next-app@latest`
+   1.1. Start new Next.js project with `npx create-next-app@latest`
 
-1.2. [Typescript plugin](https://nextjs.org/docs/app/building-your-application/configuring/typescript#typescript-plugin)
+   1.2. [Typescript plugin](https://nextjs.org/docs/app/building-your-application/configuring/typescript#typescript-plugin)
 
-1.3. [Next.js official documentation](https://nextjs.org)
+   1.3. [Next.js official documentation](https://nextjs.org)
 
 2. ## CSS Styling
 
-2.1. Global styles (global.css)
+   2.1. Global styles (global.css)
 
-2.2. CSS Framework (Tailwind)
+   2.2. CSS Framework (Tailwind)
 
-2.3. CSS Modules (home.module.css)
+   2.3. CSS Modules (home.module.css)
 
-2.4. **clsx** library (class names conditionally)
+   2.4. **clsx** library (class names conditionally)
 
-2.5. Other styling solutions (styled-jsx, styled-components, emotion, etc)
+   2.5. Other styling solutions (styled-jsx, styled-components, emotion, etc)
 
 3. ## Optimizing Fonts and Images
 
-3.1. **next/font** & **next/image** optimizes **Cumulative Layout Shift**
+   3.1. **next/font** & **next/image** optimizes **Cumulative Layout Shift**
 
-3.2. ¿ What is layout shift ?
+   3.2. ¿ What is layout shift ?
 
-**En el caso de las fuentes.**
+   **En el caso de las fuentes.**
 
-Imagina que estás utilizando fuentes de Google en tu proyecto (Inter, por poner un ejemplo), en producción esta fuente no será cargada hasta que esté lista, es decir, se haya descargado e incrustado en el sitio web, mientras hace esto, la fuente que será cargada por defecto es una fuente alternativa o la del sistema (font-family: system-ui).
+   Imagina que estás utilizando fuentes de Google en tu proyecto (Inter, por poner un ejemplo), en producción esta fuente no será cargada hasta que esté lista, es decir, se haya descargado e incrustado en el sitio web, mientras hace esto, la fuente que será cargada por defecto es una fuente alternativa o la del sistema (font-family: system-ui).
 
-El hecho de cargar una fuente alternativa a la que definiste(solo mientras se descarga la fuente original), puede ocasionar un _CAMBIO DE DISEÑO_ inesperado, o traducido al inglés _LAYOUT SHIFT_, dado que esta fuente alternativa puede tener características(ejm: ancho, alto, peso, etc) muy diferentes que la fuente original(Inter) puede terminar ocasionando posibles desbordamientos, hacer que el tamaño, el espaciado o el diseño del texto cambien, desplazando elementos a su alrededor, es decir el sitio web sufrirá un CAMBIO DE DISEÑO que no era el esperado.
+   El hecho de cargar una fuente alternativa a la que definiste(solo mientras se descarga la fuente original), puede ocasionar un _CAMBIO DE DISEÑO_ inesperado, o traducido al inglés _LAYOUT SHIFT_, dado que esta fuente alternativa puede tener características(ejm: ancho, alto, peso, etc) muy diferentes que la fuente original(Inter) puede terminar ocasionando posibles desbordamientos, hacer que el tamaño, el espaciado o el diseño del texto cambien, desplazando elementos a su alrededor, es decir el sitio web sufrirá un CAMBIO DE DISEÑO que no era el esperado.
 
-Entones, cada CAMBIO DE DISEÑO que tu aplicación web sufra por fuentes externas se irá acumulando, teniendo así un _CAMBIO DE DISEÑO ACUMULATIVO_, que traducido al inglés es _CUMULATIVE LAYOUT SHIFT_
+   Entones, cada CAMBIO DE DISEÑO que tu aplicación web sufra por fuentes externas se irá acumulando, teniendo así un _CAMBIO DE DISEÑO ACUMULATIVO_, que traducido al inglés es _CUMULATIVE LAYOUT SHIFT_
 
-_next/font_ existe por esta razón
+   _next/font_ existe por esta razón
 
-Next.js optimiza automáticamente las fuentes en la aplicación cuando usa el módulo next/font. Lo hace descargando archivos de fuentes en el momento de la compilación y alojándolos con sus otros activos estáticos.
+   Next.js optimiza automáticamente las fuentes en la aplicación cuando usa el módulo next/font. Lo hace descargando archivos de fuentes en el momento de la compilación y alojándolos con sus otros activos estáticos.
 
-Esto significa que cuando un usuario visita su aplicación, no hay solicitudes de fuentes de red adicionales que afectarían el rendimiento.
+   Esto significa que cuando un usuario visita su aplicación, no hay solicitudes de fuentes de red adicionales que afectarían el rendimiento.
 
-**En el caso de las imágenes**
+   **En el caso de las imágenes**
 
-El componente `<Image />`
+   El componente `<Image />`
 
-Es una extensión de la etiqueta HTML `<img>` y viene con optimización automática de la imagen, como por ejemplo:
+   Es una extensión de la etiqueta HTML `<img>` y viene con optimización automática de la imagen, como por ejemplo:
 
-- Evitar el _CAMBIO DE DISEÑO_ automáticamente cuando se cargan las imágenes.
-- Cambiar el tamaño de las imágenes para evitar enviar imágenes grandes a dispositivos con una ventana gráfica más pequeña.
-- Carga diferida de imágenes de forma predeterminada (las imágenes se cargan a medida que ingresan a la ventana gráfica).
-- Servir imágenes en formatos modernos, como WebP y AVIF.
+   - Evitar el _CAMBIO DE DISEÑO_ automáticamente cuando se cargan las imágenes.
+   - Cambiar el tamaño de las imágenes para evitar enviar imágenes grandes a dispositivos con una ventana gráfica más pequeña.
+   - Carga diferida de imágenes de forma predeterminada (las imágenes se cargan a medida que ingresan a la ventana gráfica).
+   - Servir imágenes en formatos modernos, como WebP y AVIF.
 
-Es una buena práctica establecer el ancho y el alto de las imágenes para evitar _CAMBIOS EN EL DISEÑO_; estas deben tener una relación de aspecto idéntica a la imagen de origen.
+   Es una buena práctica establecer el ancho y el alto de las imágenes para evitar _CAMBIOS EN EL DISEÑO_; estas deben tener una relación de aspecto idéntica a la imagen de origen.
 
-Ejemplo:
+   Ejemplo:
 
-```md
-<Image
-  src="/logo.svg"
-  width={100}
-  height={100}
-  alt="Logo image"
-/>
-```
+   ```md
+   <Image
+     src="/logo.svg"
+     width={100}
+     height={100}
+     alt="Logo image"
+   />
+   ```
 
-Aquí el componente Image tiene un ancho y alto establecido, con esto evitamos _CAMBIOS EN EL DISEÑO_.
+   Aquí el componente Image tiene un ancho y alto establecido, con esto evitamos _CAMBIOS EN EL DISEÑO_.
 
 4. ## Creating Layout and Pages
 
@@ -172,9 +171,9 @@ Por defecto, las aplicaciones Next.js usan React Server Components(no directives
 - Los Server Components respaldan las promesas y brindan una solución más simple para tareas asincrónicas como la recuperación de datos. Puede utilizar la sintaxis `async/await` sin recurrir a las bibliotecas `useEffect`, `useState` o de recuperación de datos.
 - Dado que los Server Components se ejecutan en el servidor, puede consultar la base de datos directamente sin una capa API adicional.
 
-  7.4. **Utilizando SQL**
+  7.4. Utilizando SQL
 
-Hay algunas razones por la cual usar SQL:
+  Hay algunas razones por la cual usar SQL:
 
 - SQL es el estándar de la industria para consultar bases de datos relacionales (por ejemplo, los ORM generan SQL internamente).
 - Tener un conocimiento básico de SQL puede ayudarle a comprender los fundamentos de las bases de datos relacionales, permitiéndole aplicar sus conocimientos a otras herramientas.
