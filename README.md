@@ -171,9 +171,9 @@ Por defecto, las aplicaciones Next.js usan React Server Components(no directives
 - Los Server Components respaldan las promesas y brindan una solución más simple para tareas asincrónicas como la recuperación de datos. Puede utilizar la sintaxis `async/await` sin recurrir a las bibliotecas `useEffect`, `useState` o de recuperación de datos.
 - Dado que los Server Components se ejecutan en el servidor, puede consultar la base de datos directamente sin una capa API adicional.
 
-  7.4. Utilizando SQL
+7.4. Utilizando SQL
 
-  Hay algunas razones por la cual usar SQL:
+Hay algunas razones por la cual usar SQL:
 
 - SQL es el estándar de la industria para consultar bases de datos relacionales (por ejemplo, los ORM generan SQL internamente).
 - Tener un conocimiento básico de SQL puede ayudarle a comprender los fundamentos de las bases de datos relacionales, permitiéndole aplicar sus conocimientos a otras herramientas.
