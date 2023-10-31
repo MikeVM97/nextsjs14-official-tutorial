@@ -178,4 +178,4 @@ Hay algunas razones por la cual usar SQL:
 - SQL es el estándar de la industria para consultar bases de datos relacionales (por ejemplo, los ORM generan SQL internamente).
 - Tener un conocimiento básico de SQL puede ayudarle a comprender los fundamentos de las bases de datos relacionales, permitiéndole aplicar sus conocimientos a otras herramientas.
 - SQL es versátil y le permite recuperar y manipular datos específicos.
-  El uso de [Vercel Postgress SDK](https://vercel.com/docs/storage/vercel-postgres/sdk) proporciona protección contra inyecciones de SQL.
+- El uso de [Vercel Postgress SDK](https://vercel.com/docs/storage/vercel-postgres/sdk) proporciona protección contra inyecciones de SQL.
